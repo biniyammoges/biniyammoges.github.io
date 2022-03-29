@@ -1,0 +1,79 @@
+$primary-color: #206585;
+// $secondary-color: #0d4df1;
+$blue-color: #0d4df1;
+$secondary-color: #ffa41b;
+$lightblue-color: #e3f0ff;
+$white-color: #ffff;
+$blueblack-color: #06213d;
+$black-color: #000;
+$pink-color: #f50c6e;
+$green-color: #355e3b;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 17px;
+  color: $blueblack-color;
+}
+
+img {
+  width: 100%;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+// utils
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  height: 100%;
+}
+
+.flex-inline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.divider {
+  height: 5px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: $primary-color;
+  margin: 10px 0;
+  margin-bottom: 20px;
+}

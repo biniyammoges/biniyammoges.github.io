@@ -1,0 +1,71 @@
+.experiances {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .abstract1 {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    background-color: rgba($color: $primary-color, $alpha: 0.2);
+    z-index: -1;
+    right: 0;
+    filter: blur(170px);
+  }
+
+  & > .flex {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .content {
+    width: 800px;
+    height: 125px;
+    margin: auto;
+    background: $white-color;
+    border: 1px solid rgba(229, 229, 229, 0.58);
+    box-sizing: border-box;
+    border-radius: 11px;
+    padding: 2rem;
+    position: relative;
+
+    .client,
+    .project,
+    .year,
+    .award {
+      text-align: center;
+      position: relative;
+
+      h2 {
+        font-size: 40px;
+        color: $primary-color;
+      }
+    }
+
+    .client .dot {
+      @include dot($secondary-color);
+
+      top: 16px;
+      left: 32px;
+    }
+    .project .dot {
+      @include dot($primary-color);
+
+      top: 16px;
+      left: 32px;
+    }
+    .year .dot {
+      @include dot($green-color);
+
+      top: 16px;
+      left: 37px;
+    }
+    .award .dot {
+      @include dot($pink-color);
+
+      top: 16px;
+      left: 45px;
+    }
+  }
+}

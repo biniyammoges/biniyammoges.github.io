@@ -1,0 +1,176 @@
+.services {
+  position: relative;
+  align-items: center;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    position: relative;
+  }
+
+  .abstract1 {
+    width: 50px;
+    position: absolute;
+    top: -50px;
+    left: 50px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 5px solid $primary-color;
+  }
+
+  // image and  service list
+  .content .list {
+    position: relative;
+
+    // fadding bg
+    &::after {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+
+      background: $secondary-color;
+      filter: blur(150px);
+      border-radius: 271.5px;
+    }
+
+    // circle image
+    img {
+      position: absolute;
+      width: 250px;
+    }
+
+    // card
+    & > .flex {
+      justify-content: space-between;
+    }
+
+    // list it self
+    &.flex {
+      flex-direction: column;
+    }
+
+    .web {
+      @include card-it();
+      // box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+      // box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
+
+      .web-icon {
+        @include card-it-icon($secondary-color, 35);
+      }
+
+      .detail {
+        padding-right: 30px;
+      }
+
+      .desc {
+        color: lighten($black-color, 40);
+        font-size: 15px;
+      }
+
+      .title {
+        font-size: 19px;
+        font-weight: 600;
+        color: $secondary-color;
+      }
+    }
+
+    .ui {
+      @include card-it();
+      margin-right: 8px;
+
+      .ui-icon {
+        @include card-it-icon($primary-color, 44);
+      }
+
+      .detail {
+        padding-right: 30px;
+      }
+
+      .desc {
+        color: lighten($black-color, 40);
+        font-size: 15px;
+      }
+
+      .title {
+        font-size: 19px;
+        font-weight: 600;
+        color: darken($primary-color, 20);
+      }
+    }
+
+    .app {
+      @include card-it();
+
+      .app-icon {
+        @include card-it-icon($green-color, 55);
+      }
+
+      .detail {
+        padding-right: 30px;
+      }
+
+      .desc {
+        color: lighten($black-color, 40);
+        font-size: 15px;
+      }
+
+      .title {
+        font-size: 19px;
+        font-weight: 600;
+        color: $green-color;
+      }
+    }
+
+    .db {
+      @include card-it();
+
+      .db-icon {
+        @include card-it-icon($pink-color, 37);
+      }
+
+      .detail {
+        padding-right: 30px;
+      }
+
+      .desc {
+        color: lighten($black-color, 40);
+        font-size: 15px;
+      }
+
+      .title {
+        font-size: 19px;
+        font-weight: 600;
+        color: $pink-color;
+      }
+    }
+  }
+
+  .text {
+    max-width: 500px;
+    margin-top: 1rem;
+
+    h1 {
+      font-size: 40px;
+      line-height: 40px;
+
+      span {
+        color: $primary-color;
+      }
+    }
+
+    p {
+      font-size: 22px;
+      color: lighten($black-color, 40);
+      font-weight: 600;
+    }
+  }
+}

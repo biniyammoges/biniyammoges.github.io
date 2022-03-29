@@ -1,0 +1,192 @@
+.showcase {
+  background-color: $lightblue-color;
+  position: relative;
+  padding-top: 65px;
+
+  header {
+    height: 65px;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    .flex {
+      justify-content: space-between;
+    }
+
+    .navbrand {
+      font-size: 25px;
+      font-weight: 900;
+      color: $blueblack-color;
+
+      span {
+        color: $primary-color;
+      }
+
+      img {
+        width: 40px;
+      }
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    .nav li {
+      margin: 0 15px;
+
+      a {
+        color: $blueblack-color;
+        font-size: 17px;
+        font-weight: 600;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+
+      a.hire-btn {
+        color: $white-color;
+        background-color: $primary-color;
+        padding: 8px 25px;
+        border-radius: 5px;
+        font-weight: 600;
+      }
+    }
+
+    &.sticky {
+      // background-color: $white-color;
+      background-color: rgba(255, 255, 255, 0.8);
+      position: fixed;
+      backdrop-filter: blur(25px);
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      height: 65px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.057);
+      transition: all 0.3s;
+    }
+  }
+
+  .showcase-content {
+    padding: 2rem 0;
+    // background-color: aqua;
+
+    .text {
+      max-width: 500px;
+      position: relative;
+
+      p {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      h1 {
+        font-size: 40px;
+        margin: 0.7rem 0;
+        font-weight: 900;
+        overflow: hidden;
+
+        span.colored {
+          color: $primary-color;
+          text-decoration: underline;
+        }
+      }
+
+      p {
+        font-size: 20px;
+        margin-bottom: 0.8rem;
+      }
+
+      .order-btn {
+        margin-top: 0.8rem;
+        padding: 13px 25px;
+        border-radius: 5px;
+        background-color: $primary-color;
+        color: $white-color;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 18px;
+        box-shadow: 0 10px 100px 0 rgba(0, 0, 0, 0.219);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 20px;
+        height: 15px;
+        width: 15px;
+        border: 5px solid $primary-color;
+        border-radius: 50%;
+      }
+    }
+
+    .image {
+      position: relative;
+      // width: 380px !important;
+      width: 100%;
+      height: 380px;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: -15px;
+        right: -15px;
+        bottom: -15px;
+        left: -15px;
+        border: 7px solid $primary-color;
+        z-index: 1;
+        border-radius: 50%;
+      }
+
+      img {
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+      }
+
+      .rate {
+        display: flex;
+        flex-wrap: nowrap;
+        box-shadow: 0 -5px 15px 15px rgba(0, 0, 0, 0.037);
+        align-items: center;
+        position: absolute;
+        z-index: 10;
+        background-color: $white-color;
+        padding: 10px;
+        border-radius: 25px;
+
+        .icon {
+          flex: 1;
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          background-color: $secondary-color;
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $white-color;
+          margin-right: 10px;
+        }
+
+        h4 {
+          font-size: 15px;
+          font-weight: 900;
+          padding-right: 15px;
+        }
+      }
+
+      .rate.award {
+        bottom: 0;
+        right: -20px;
+
+        .icon {
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
+}

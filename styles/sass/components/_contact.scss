@@ -1,0 +1,122 @@
+.contact {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    position: relative;
+  }
+
+  & > img {
+    display: none;
+    position: absolute;
+    width: 100px;
+    right: 70px;
+    top: 70px;
+  }
+
+  .abstract1 {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    left: -50px;
+    bottom: 0;
+    background-color: $primary-color;
+    z-index: -1;
+    filter: blur(200px);
+  }
+
+  .contact-form {
+    max-width: 400px;
+    width: 100%;
+
+    form {
+      width: 100%;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    input,
+    button,
+    textarea {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      background: #ffffff;
+      border: none;
+      color: lighten($black-color, 30);
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 18px;
+      outline: none;
+      box-shadow: 0 0 0 0.5px lighten($black-color, 80);
+      transition: box-shadow 0.2s ease-in-out;
+
+      &:not([type="submit"]):focus {
+        box-shadow: 0 0 0 0.7px lighten($primary-color, 10);
+      }
+
+      &::placeholder {
+        color: lighten($black-color, 70);
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background-color: $primary-color;
+      color: $white-color;
+      cursor: pointer;
+      box-shadow: 0px 8px 28px 6px rgba(13, 77, 241, 0.08);
+
+      &:disabled {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .text {
+    max-width: 500px;
+
+    p {
+      font-size: 20px;
+    }
+
+    ul {
+      margin: 10px 0;
+    }
+
+    li {
+      padding: 10px 15px;
+      border: 1px solid rgba(13, 77, 241, 0.1);
+      border-radius: 5px;
+      display: inline-block;
+
+      i {
+        margin-right: 8px;
+      }
+    }
+
+    a {
+      border: 1px solid rgba(13, 77, 241, 0.1);
+      border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 5px;
+      color: $blueblack-color;
+      font-size: 25px;
+      height: 45px;
+      width: 45px;
+
+      &:hover {
+        background-color: $lightblue-color;
+      }
+    }
+  }
+}

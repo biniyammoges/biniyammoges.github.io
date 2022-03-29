@@ -1,0 +1,67 @@
+.hire {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .text {
+    max-width: 500px;
+
+    h1 {
+      // font-size: 45px;
+      line-height: 40px;
+
+      span {
+        color: $primary-color;
+      }
+    }
+
+    p {
+      font-size: 22px;
+      color: lighten($black-color, 40);
+      font-weight: 600;
+    }
+  }
+
+  .content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .arrow {
+      width: 50px;
+      position: absolute;
+      top: -70px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    a {
+      display: block;
+      height: 50px;
+      width: 250px;
+      background-color: $white-color;
+      margin: 5px 0;
+      border-radius: 10px;
+      background: #ffffff;
+      border: 1px solid rgba(229, 229, 229, 0.58);
+      box-sizing: border-box;
+      box-shadow: 0px 4px 73px rgba(0, 0, 0, 0.03);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    a img {
+      width: 100px;
+    }
+
+    .fivver img {
+      width: 120px;
+    }
+  }
+}

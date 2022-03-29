@@ -1,0 +1,57 @@
+import React from "react";
+
+const Work = () => {
+  return (
+    <div className="works">
+      <div className="container">
+        <div className="text">
+          <h1>
+            Clients consistently receive
+            <span> high-quality</span> work from me.
+          </h1>
+          <div className="divider"></div>
+          <p>
+            I always offer software that is SEO optimized, performs well, has
+            clean and maintainable code, and includes post-delivery support.
+          </p>
+        </div>
+        <div className="content">
+          <div className="list flex">
+            <div className="abtract2"></div>
+
+            <img src="./assets/circle-bg.svg" alt="service" />
+            <div className="security flex">
+              <div className="security-icon">
+                <i className="fas fa-lock"></i>
+              </div>
+              <div className="detail">
+                <p className="title">Strong Security</p>
+                <p className="desc">Prevent common attacks</p>
+              </div>
+            </div>
+            <div className="speed flex">
+              <div className="speed-icon">
+                <i className="fas fa-magic"></i>
+              </div>
+              <div className="detail">
+                <p className="title">Fast Delivery</p>
+                <p className="desc">Always deliver sooner</p>
+              </div>
+            </div>
+            <div className="online flex">
+              <div className="online-icon">
+                <i className="fas fa-database"></i>
+              </div>
+              <div className="detail">
+                <p className="title">24/7 active</p>
+                <p className="desc">Always active</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Work;
