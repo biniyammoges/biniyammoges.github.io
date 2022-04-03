@@ -1,7 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
+import Lottie from "react-lottie";
+
 import CustomLink from "../CustomLink";
 import Logo from "./Logo";
 import MenuButton from "./MenuButton";
+import * as notifyAnimation from "@/data/lottie/notifyAnimation";
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
@@ -36,7 +39,20 @@ const Header = () => {
         <Logo />
         <ul className={showNav ? "nav flex active" : "nav flex"}>
           <li>
-            <CustomLink href="#/">Blogs</CustomLink>
+            <CustomLink href="/blogs" style={{ position: "relative" }}>
+              Blogs
+              <Lottie
+                options={{ animationData: notifyAnimation }}
+                height={30}
+                width={30}
+                style={{
+                  position: "absolute",
+                  top: -12,
+                  right: -17,
+                  margin: 0,
+                }}
+              />
+            </CustomLink>
           </li>
           <li>
             <CustomLink href="#services">Services</CustomLink>

@@ -1,7 +1,17 @@
-import React from "react";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
 import ContactForm from "./ContactForm";
 
 const Contact = () => {
+  const [phone] = useState("+251955306094");
+  const [email] = useState("biniyammoges54@gmail.com");
+
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text);
+  };
+
   return (
     <div className="contact" id="contact">
       <img src="./assets/thanks.jpg" alt="dd" />
@@ -14,14 +24,14 @@ const Contact = () => {
             contact me
           </h1>
           <div className="divider"></div>
-          <p>Please share your thoughts with us.</p>
+          <p>Please share your thoughts with us. I will reply shortly</p>
           <ul>
-            <li>
-              <i className="fas fa-phone"></i> +251955306094
-            </li>
-            <li>
-              <i className="fas fa-envelope"></i> biniyammoges54@gmail.com
-            </li>
+            <button onClick={() => copyToClipboard(phone)}>
+              <FontAwesomeIcon icon={faPhone} /> {phone}
+            </button>
+            <button onClick={() => copyToClipboard(email)}>
+              <FontAwesomeIcon icon={faEnvelope} /> {email}
+            </button>
           </ul>
           <ul>
             <a href="https://github.com/biniyammoges" target="blank">

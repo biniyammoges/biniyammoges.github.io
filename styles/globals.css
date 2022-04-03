@@ -4,13 +4,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Source Sans Pro", sans-serif;
   scroll-behavior: smooth;
 }
 
 body {
-  font-size: 17px;
+  font-family: "Source Sans Pro", sans-serif;
   color: #06213d;
+}
+
+input,
+button,
+textarea {
+  font-family: "Source Sans Pro", sans-serif;
+  border: none;
+  outline: none;
 }
 
 img {
@@ -20,10 +27,6 @@ img {
   -moz-user-drag: none;
   -o-user-drag: none;
   user-drag: none;
-}
-
-ul {
-  list-style: none;
 }
 
 a {
@@ -81,6 +84,9 @@ a {
   left: 0;
   width: 100%;
 }
+.showcase header ul {
+  list-style: none;
+}
 .showcase header .flex {
   justify-content: space-between;
 }
@@ -115,6 +121,9 @@ a {
   padding: 8px 25px;
   border-radius: 5px;
   font-weight: 600;
+}
+.showcase header .nav li:last-child {
+  margin-right: 0;
 }
 .showcase header.sticky {
   background-color: rgba(255, 255, 255, 0.8);
@@ -640,7 +649,7 @@ a {
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  background-color: #fcb7d4;
+  background-color: #fee8f2;
   color: #f50c6e;
   font-size: 20px;
   margin-right: 15px;
@@ -872,11 +881,6 @@ a {
 .hire .text h1 span {
   color: #206585;
 }
-.hire .text p {
-  font-size: 22px;
-  color: #666666;
-  font-weight: 600;
-}
 .hire .content {
   position: relative;
   display: flex;
@@ -920,6 +924,14 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.contact .alert {
+  display: flex;
+  align-items: center;
+}
+.contact .alert p {
+  color: #06213d;
+  font-size: 17px;
 }
 .contact .container {
   position: relative;
@@ -986,9 +998,6 @@ a {
   cursor: pointer;
   box-shadow: 0px 8px 28px 6px rgba(13, 77, 241, 0.08);
 }
-.contact .contact-form button:disabled {
-  cursor: not-allowed;
-}
 .contact .text {
   max-width: 500px;
 }
@@ -998,14 +1007,23 @@ a {
 .contact .text ul {
   margin: 10px 0;
 }
-.contact .text li {
+.contact .text button {
   padding: 10px 15px;
   border: 1px solid rgba(13, 77, 241, 0.1);
   border-radius: 5px;
   display: inline-block;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: #ffff;
+  color: #06213d;
+  font-size: 16px;
 }
-.contact .text li i {
-  margin-right: 8px;
+.contact .text button i {
+  margin-right: 10px;
+  display: inline-block;
+}
+.contact .text button:hover {
+  background-color: #f2f2f2;
 }
 .contact .text a {
   border: 1px solid rgba(13, 77, 241, 0.1);
@@ -1092,6 +1110,7 @@ a {
 }
 .footer .detail ul {
   margin: 1rem 0;
+  list-style: none;
 }
 .footer .detail ul .title {
   color: #206585;
@@ -1125,14 +1144,14 @@ a {
 }
 .subscribe .content p {
   color: #ffff;
-  margin: 1.2rem auto;
-  max-width: 400px;
-  font-weight: 600;
+  margin: 1.5rem auto;
+  max-width: 500px;
+  font-size: 19px;
 }
 .subscribe .content form {
   background-color: #ffff;
   border-radius: 10px;
-  height: 55px;
+  height: 50px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -1146,9 +1165,8 @@ a {
   border: none;
   outline: none;
   padding: 10px;
-  font-size: 19px;
-  font-weight: 600;
-  color: gray;
+  font-size: 17px;
+  color: #666666;
 }
 .subscribe .content form button {
   height: 100%;
@@ -1630,9 +1648,8 @@ a {
     font-size: 18px;
   }
   .subscribe .content form button {
-    width: 5rem;
     font-weight: 600;
-    padding: 8px 10px;
+    padding: 8px 15px;
     font-size: 17px;
   }
 

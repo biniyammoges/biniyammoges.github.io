@@ -1,4 +1,12 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import {
+  faDesktop,
+  faMagic,
+  faMobile,
+  faDatabase,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Service = () => {
   return (
@@ -10,7 +18,7 @@ const Service = () => {
             <img src="./assets/circle-bg.svg" alt="service" />
             <div className="web flex">
               <div className="web-icon">
-                <i className="fas fa-desktop"></i>
+                <FontAwesomeIcon icon={faDesktop} />
               </div>
               <div className="detail">
                 <p className="title">Web Development</p>
@@ -22,7 +30,7 @@ const Service = () => {
             <div className="fl flex">
               <div className="ui flex">
                 <div className="ui-icon">
-                  <i className="fas fa-magic"></i>
+                  <FontAwesomeIcon icon={faMagic} />
                 </div>
                 <div className="detail">
                   <p className="title">UI/Ux Design</p>
@@ -33,7 +41,7 @@ const Service = () => {
               </div>
               <div className="app flex">
                 <div className="app-icon">
-                  <i className="fas fa-mobile"></i>
+                  <FontAwesomeIcon icon={faMobile} />
                 </div>
                 <div className="detail">
                   <p className="title">Mobile Dev.t</p>
@@ -45,7 +53,7 @@ const Service = () => {
             </div>
             <div className="db flex">
               <div className="db-icon">
-                <i className="fas fa-database"></i>
+                <FontAwesomeIcon icon={faDatabase} />
               </div>
               <div className="detail">
                 <p className="title">Database Design</p>

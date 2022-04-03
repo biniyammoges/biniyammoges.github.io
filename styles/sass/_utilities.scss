@@ -13,13 +13,20 @@ $green-color: #355e3b;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Source Sans Pro", sans-serif;
   scroll-behavior: smooth;
 }
 
 body {
-  font-size: 17px;
+  font-family: "Source Sans Pro", sans-serif;
   color: $blueblack-color;
+}
+
+input,
+button,
+textarea {
+  font-family: "Source Sans Pro", sans-serif;
+  border: none;
+  outline: none;
 }
 
 img {
@@ -29,10 +36,6 @@ img {
   -moz-user-drag: none;
   -o-user-drag: none;
   user-drag: none;
-}
-
-ul {
-  list-style: none;
 }
 
 a {

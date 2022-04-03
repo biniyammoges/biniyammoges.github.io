@@ -1,0 +1,51 @@
+.blogShowcase {
+  background-color: #e3f0ff;
+  padding: 5rem 0;
+}
+
+.blogShowcase .container {
+  height: auto;
+  margin: auto;
+}
+
+.content {
+  max-width: 500px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.content > span {
+  /* color: #206585; */
+  color: #639fbb;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.content h1 {
+  font-size: 35px;
+  line-height: 38px;
+  margin: 0.9rem 0;
+  font-weight: 900;
+}
+
+.content h1 span {
+  color: #206585;
+}
+
+.content p {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.blogs {
+  margin: 4rem 0;
+}
+
+.blogs .flex {
+  margin: 2rem auto;
+  gap: 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}

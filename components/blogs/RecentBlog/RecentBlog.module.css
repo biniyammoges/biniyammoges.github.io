@@ -1,0 +1,30 @@
+.recentBlog {
+    margin: 20px 0;
+    display: flex;align-items: flex-start;justify-content: flex-start;
+    /* flex-wrap: wrap; */
+    gap: 15px;
+    color: #5a6068;
+}
+
+.recentBlog:hover {
+    color: #206585;
+}
+
+.recentBlog img {
+    border-radius: 5px;
+}
+
+.recentBlog h4 {
+    font-weight: 600;
+}
+
+.recentBlog span {
+    font-size: 15px;
+    color: #536172;
+}
+
+@media screen and (max-width: 600px) {
+    .recentBlog {
+        flex-wrap: wrap;
+    }
+}

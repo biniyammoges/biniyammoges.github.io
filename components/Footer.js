@@ -19,13 +19,13 @@ const Footer = () => {
               <h4>Services</h4>
             </li>
             <li>
-              <Link href="/"> Web Development</Link>
+              <Link href="/#services"> Web Development</Link>
             </li>
             <li>
-              <Link href="/"> Mobile Development</Link>
+              <Link href="/#services"> Mobile Development</Link>
             </li>
             <li>
-              <Link href="/"> Ui/Ux Design</Link>
+              <Link href="/#services"> Ui/Ux Design</Link>
             </li>
           </ul>
           <ul>
@@ -33,13 +33,13 @@ const Footer = () => {
               <h4>Links</h4>
             </li>
             <li>
-              <Link href="/"> Blogs</Link>
+              <Link href="/blogs"> Blogs</Link>
             </li>
             <li>
-              <Link href="/"> Contact</Link>
+              <Link href="/#contact"> Contact</Link>
             </li>
             <li>
-              <Link href="/"> Hire Me</Link>
+              <Link href="/#hire"> Hire Me</Link>
             </li>
           </ul>
 
@@ -48,13 +48,22 @@ const Footer = () => {
               <h4>Follow</h4>
             </li>
             <li>
-              <Link href="/"> Facebook</Link>
+              <a href="https://www.facebook.com/bini.moges54/" target="blank">
+                Facebook
+              </a>
             </li>
             <li>
-              <Link href="/"> Linkedin</Link>
+              <a
+                href="https://www.linkedin.com/in/biniyam-moges-278241214/"
+                target="blank"
+              >
+                Linkedin
+              </a>
             </li>
             <li>
-              <Link href="/"> Twitter</Link>
+              <a href="https://github.com/biniyammoges" target="blank">
+                Github
+              </a>
             </li>
           </ul>
         </div>

@@ -1,0 +1,45 @@
+.blogCard {
+  max-width: 300px;
+  width: 100%;
+  text-align: left;
+  box-shadow: 0 0 0 0.7px rgba(164, 180, 164, 0.267);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.blogCard:hover {
+  box-shadow: 0 0 0 0.7px rgba(164, 180, 164, 0.267), 0 5px 28px 0px rgba(164, 180, 164, 0.167);
+  transform: scale(1.005);
+}
+
+.blogCard img {
+  border-radius: 10px;
+}
+
+.blogCard p {
+  /* color: #464646; */
+  color: #06213d;
+  font-size: 19px;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.tags {
+  margin: 10px 0;
+}
+
+.tags span {
+  background-color: rgba(164, 180, 164, 0.15);
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #193d64;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.author {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #7b7d80;
+}

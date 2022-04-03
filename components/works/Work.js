@@ -1,4 +1,7 @@
-import React from "react";
+import Lottie from "react-lottie";
+
+import * as secureAnimation from "@/data/lottie/secureAnimation";
+import * as fastAnimation from "@/data/lottie/fastAnimation";
 
 const Work = () => {
   return (
@@ -21,8 +24,20 @@ const Work = () => {
 
             <img src="./assets/circle-bg.svg" alt="service" />
             <div className="security flex">
-              <div className="security-icon">
-                <i className="fas fa-lock"></i>
+              <div
+                style={{ backgroundColor: "white !important" }}
+                className="security-icon"
+              >
+                <Lottie
+                  options={{
+                    animationData: secureAnimation,
+                    autoplay: true,
+                    loop: false,
+                  }}
+                  width={45}
+                  height={60}
+                  // speed={0.3}
+                />
               </div>
               <div className="detail">
                 <p className="title">Strong Security</p>
@@ -31,7 +46,17 @@ const Work = () => {
             </div>
             <div className="speed flex">
               <div className="speed-icon">
-                <i className="fas fa-magic"></i>
+                {/* <i className="fas fa-magic"></i> */}
+                <Lottie
+                  options={{
+                    animationData: fastAnimation,
+                    autoplay: true,
+                    loop: true,
+                  }}
+                  width={90}
+                  height={90}
+                  speed={0.3}
+                />
               </div>
               <div className="detail">
                 <p className="title">Fast Delivery</p>

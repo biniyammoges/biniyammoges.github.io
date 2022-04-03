@@ -11,6 +11,10 @@
     left: 0;
     width: 100%;
 
+    ul {
+      list-style: none;
+    }
+
     .flex {
       justify-content: space-between;
     }
@@ -52,6 +56,10 @@
         padding: 8px 25px;
         border-radius: 5px;
         font-weight: 600;
+      }
+
+      &:last-child {
+        margin-right: 0;
       }
     }
 

@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faStar, faAward } from "@fortawesome/free-solid-svg-icons";
 
 const ShowCaseContent = () => {
   return (
@@ -26,7 +29,7 @@ const ShowCaseContent = () => {
           <div className="rate star">
             <div className="icon">
               <span>
-                <i className="fas fa-star"></i>
+                <FontAwesomeIcon icon={faStar} />
               </span>
             </div>
             <h4>
@@ -37,7 +40,7 @@ const ShowCaseContent = () => {
           <div className="rate award">
             <div className="icon">
               <span>
-                <i className="fas fa-award"></i>
+                <FontAwesomeIcon icon={faAward} />
               </span>
             </div>
             <h4>

@@ -17,15 +17,16 @@
 
     p {
       color: $white-color;
-      margin: 1.2rem auto;
-      max-width: 400px;
-      font-weight: 600;
+      margin: 1.5rem auto;
+      max-width: 500px;
+      font-size: 19px;
+      // font-weight: 600;
     }
 
     form {
       background-color: $white-color;
       border-radius: 10px;
-      height: 55px;
+      height: 50px;
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -39,9 +40,8 @@
         border: none;
         outline: none;
         padding: 10px;
-        font-size: 19px;
-        font-weight: 600;
-        color: lighten($black-color, 50);
+        font-size: 17px;
+        color: lighten($black-color, 40);
       }
 
       button {
