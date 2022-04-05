@@ -1,57 +1,70 @@
 import { useState } from "react";
-
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+
 import classes from "./Pagination.module.css";
 
-const Index = () => {
-  const [activePage, setActivePage] = useState(1);
-
-  const pages = [1, 2, 3, 4, 5];
+const Index = ({ page, pages, onPageChange }) => {
+  const [activePage, setActivePage] = useState(page);
+  const allPages = [...Array(pages).keys()];
 
   const prev = () => {
     if (activePage <= 1) return setActivePage(1);
     setActivePage((state) => state - 1);
+    onPageChange(activePage - 1);
   };
 
   const next = () => {
-    if (activePage >= pages.length) return setActivePage(pages.length);
+    if (activePage >= allPages.length) return setActivePage(allPages.length);
     setActivePage((state) => state + 1);
+    onPageChange(activePage + 1);
+  };
+
+  const changePage = (val) => {
+    if (val === activePage) return;
+    setActivePage(val);
+    onPageChange(val);
+    window.screenTop = 0;
   };
 
   return (
     <div className={classes.pagination}>
       <div className={classes.container}>
-        <button className={classes.page} onClick={prev}>
-          <Image
-            src={"/icons/arrow-left.svg"}
-            alt="left"
-            height={22}
-            width={22}
-            objectFit={"contain"}
-          />
-        </button>
-        {pages.map((page, idx) => (
+        {activePage !== 1 && (
+          <button
+            style={{ fontSize: 14 }}
+            className={classes.page}
+            onClick={prev}
+          >
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button>
+        )}
+        {allPages.map((pageVal, idx) => (
           <button
             key={idx}
             className={
-              activePage === page
+              activePage === pageVal + 1
                 ? classes.page + " " + classes.active
                 : classes.page
             }
-            onClick={() => setActivePage(page)}
+            onClick={() => changePage(pageVal + 1)}
           >
-            <span>{page}</span>
+            <span>{pageVal + 1}</span>
           </button>
         ))}
-        <button className={classes.page} onClick={next}>
-          <Image
-            src={"/icons/arrow-right.svg"}
-            alt="left"
-            height={22}
-            width={22}
-            objectFit={"contain"}
-          />
-        </button>
+        {activePage !== allPages.length && (
+          <button
+            style={{ fontSize: 14 }}
+            className={classes.page}
+            onClick={next}
+          >
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button>
+        )}
       </div>
     </div>
   );

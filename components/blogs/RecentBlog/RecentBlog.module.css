@@ -1,12 +1,18 @@
 .recentBlog {
-    margin: 20px 0;
-    display: flex;align-items: flex-start;justify-content: flex-start;
-    /* flex-wrap: wrap; */
+    margin: .7rem 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
     gap: 15px;
     color: #5a6068;
+    box-shadow: 0 0 0 0.7px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+    padding: 0.6rem;
 }
 
 .recentBlog:hover {
+    box-shadow: 0 0 0 0.7px rgba(164, 180, 164, 0.267), 0 5px 28px 0px rgba(164, 180, 164, 0.167);
+    transform: scale(1.005);
     color: #206585;
 }
 
@@ -16,6 +22,7 @@
 
 .recentBlog h4 {
     font-weight: 600;
+    margin-bottom: 5px;
 }
 
 .recentBlog span {

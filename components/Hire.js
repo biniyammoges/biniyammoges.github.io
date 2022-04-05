@@ -1,4 +1,4 @@
-import React from "react";
+import Image from "next/image";
 
 const Hire = () => {
   return (
@@ -11,25 +11,51 @@ const Hire = () => {
           </h1>
           <div className="divider"></div>
           <p>
-            Currently I don`t have my own freelancing platform through which I
-            work with my clients. Please select one of the platforms below to
+            Currently I don{"'"}t have my own freelancing platform through which
+            I work with my clients. Please select one of the platforms below to
             employ me.
           </p>
         </div>
         <div className="content">
-          <img src="./assets/arrow.svg" alt="" className="arrow" />
+          <img src="/assets/arrow.svg" alt="arrow" className="arrow" />
           <a
             href="https://www.upwork.com/freelancers/~0188fc3fdbb85a5818"
             className="upwork"
             target="blank"
           >
-            <img src="./assets/upwork.png" alt="" />
+            <Image
+              src="/assets/upwork.png"
+              height={100}
+              width={100}
+              alt="upwork"
+              objectFit="contain"
+            />
           </a>
-          <a href="#" className="fivver">
-            <img src="./assets/fivver.png" alt="" />
+          <a
+            href="https://www.fiverr.com/biniyammoges"
+            className="fivver"
+            target="blank"
+          >
+            <Image
+              src="/assets/fivver.png"
+              width={130}
+              height={100}
+              alt="fiver"
+              objectFit="contain"
+            />
           </a>
-          <a href="#" className="freelance">
-            <img src="./assets/freelancer.png" alt="" />
+          <a
+            href="https://www.freelancer.com/u/biniyammoges"
+            target="blank"
+            className="freelance"
+          >
+            <Image
+              src="/assets/freelancer.png"
+              alt="freelancer"
+              width={120}
+              height={100}
+              objectFit="contain"
+            />
           </a>
         </div>
       </div>

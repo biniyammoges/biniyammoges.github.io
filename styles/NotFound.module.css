@@ -1,0 +1,47 @@
+.header {
+    box-shadow: 0 0 0 0.7px rgba(0, 0, 0, 0.07);
+    background-color: white;
+}
+
+.wrapper {
+    background-color: #f8f9fa;
+    height: 100vh;
+}
+
+.content {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.content .text span {
+    background-color: rgb(118, 184, 201);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.content .text h1 {
+    margin: .5rem 0;
+    font-size: 35px;
+}
+
+.content .text p {
+    font-size: 18px;
+    margin-bottom: 1rem;
+    max-width: 500px;
+}
+
+.content .text a {
+    background-color: #206585;
+    color: white;
+    padding: .6rem 1.42rem;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    text-transform: uppercase;
+}

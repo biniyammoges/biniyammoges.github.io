@@ -55,19 +55,19 @@ const Header = () => {
             </CustomLink>
           </li>
           <li>
-            <CustomLink href="#services">Services</CustomLink>
+            <CustomLink href="/#services">Services</CustomLink>
           </li>
           <li>
-            <CustomLink href="#skills">Skills</CustomLink>
+            <CustomLink href="/#skills">Skills</CustomLink>
           </li>
           <li>
-            <CustomLink href="#experiances">Experiances</CustomLink>
+            <CustomLink href="/#experiances">Experiances</CustomLink>
           </li>
           <li>
-            <CustomLink href="#contact">Contact Me</CustomLink>
+            <CustomLink href="/#contact">Contact Me</CustomLink>
           </li>
           <li>
-            <CustomLink href="#hire" className="hire-btn">
+            <CustomLink href="/#hire" className="hire-btn">
               Hire Me
             </CustomLink>
           </li>

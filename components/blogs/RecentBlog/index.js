@@ -4,12 +4,14 @@ import CustomLink from "../../CustomLink";
 
 import classes from "./RecentBlog.module.css";
 
-const index = ({ title, imageUrl, date }) => {
+const index = ({ blog }) => {
+  const { title, slug, createdAt } = blog.attributes;
+
   return (
-    <CustomLink className={classes.recentBlog}>
+    <CustomLink href={`/blogs/${slug}`} className={classes.recentBlog}>
       <div>
-        <h4>{title}</h4>
-        <span>{moment(date).format("MMM Do YY")}</span>
+        <h4>{title.length <= 65 ? title : title.substring(0, 65) + ".."}</h4>
+        <span>{moment(createdAt).format("MMM Do YY")}</span>
       </div>
     </CustomLink>
   );

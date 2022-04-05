@@ -755,8 +755,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
   margin: 0 5px;
   border-radius: 50%;
   background: #ffff;
@@ -881,6 +881,11 @@ a {
 .hire .text h1 span {
   color: #206585;
 }
+.hire .text p {
+  font-size: 22px;
+  color: #404040;
+  font-weight: 600;
+}
 .hire .content {
   position: relative;
   display: flex;
@@ -1001,8 +1006,8 @@ a {
 .contact .text {
   max-width: 500px;
 }
-.contact .text p {
-  font-size: 20px;
+.contact .text h1 span {
+  color: #206585;
 }
 .contact .text ul {
   margin: 10px 0;

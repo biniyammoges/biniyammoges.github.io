@@ -1,53 +1,38 @@
-import moment from "moment";
 import { useRouter } from "next/router";
+import axios from "axios";
+import moment from "moment";
 import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 import BlogHeader from "@/components/blogs/BlogHeader";
 import RecentBlog from "@/components/blogs/RecentBlog";
 import Footer from "@/components/Footer";
 import ErrorMessage from "@/components/error";
+import EmailCard from "@/components/blogs/EmailCard";
 
 import classes from "@/styles/BlogPage.module.css";
 import blogsApi from "@/services/blogs";
+import remarkComponent from "@/utils/markdownOptions";
+import Head from "next/head";
 
-const Blog = ({ data, error }) => {
+const Blog = ({ data, error, relatedBlogs }) => {
   const router = useRouter();
   const goBack = () => router.back();
   const blog = data?.data;
 
-  const remarkComponent = {
-    code({ language, inline, children, className, ...props }) {
-      return inline ? (
-        <code
-          style={{
-            backgroundColor: "azure",
-            padding: "4px 10px",
-            borderRadius: "5px",
-            fontSize: "14px",
-          }}
-          className={className}
-          {...props}
-        >
-          {children}
-        </code>
-      ) : (
-        <SyntaxHighlighter style={dracula} language={"javascript"} {...props}>
-          {children}
-        </SyntaxHighlighter>
-      );
-    },
-  };
-
   return (
     <>
+      <Head>
+        <title>{blog.attributes.title}</title>
+      </Head>
       <div className={classes.header + " showcase"}>
         <BlogHeader />
       </div>
       <div>
         <div className="container">
           <button className={classes.backBtn} onClick={goBack}>
+            <FontAwesomeIcon style={{ marginRight: 8 }} icon={faChevronLeft} />
             Back
           </button>
 
@@ -79,42 +64,18 @@ const Blog = ({ data, error }) => {
                   <h4>🤩️ Thanks for reading!</h4>
                 </div>
               </div>
-              <div className={classes.recent}>
-                <div className={classes.subscribe}>
-                  <h3>Subscribe for newsletter</h3>
-                  <form onSubmit={(e) => e.preventDefault()}>
-                    <input type="email" placeholder="Email address" />
-                    <br />
-                    <button>Subscribe</button>
-                  </form>
-                </div>
 
-                <h3>Similar posts</h3>
-                <RecentBlog
-                  title={blog?.attributes.title}
-                  imageUrl={"/assets/blogBg.jpg"}
-                  date={blog?.attributes.date}
-                />
-                <RecentBlog
-                  title={blog?.attributes.title}
-                  imageUrl={"/assets/blogBg.jpg"}
-                  date={blog?.attributes.date}
-                />
-                <RecentBlog
-                  title={blog?.attributes.title}
-                  imageUrl={"/assets/blogBg.jpg"}
-                  date={blog?.attributes.date}
-                />
-                <RecentBlog
-                  title={blog?.attributes.title}
-                  imageUrl={"/assets/blogBg.jpg"}
-                  date={blog?.attributes.date}
-                />
-                <RecentBlog
-                  title={blog?.attributes.title}
-                  imageUrl={"/assets/blogBg.jpg"}
-                  date={blog?.attributes.date}
-                />
+              <div className={classes.recent}>
+                <EmailCard />
+
+                {relatedBlogs.length > 0 && (
+                  <>
+                    <h3>Related blogs</h3>
+                    {relatedBlogs.map((relBlog) => (
+                      <RecentBlog key={relBlog.id} blog={relBlog} />
+                    ))}
+                  </>
+                )}
               </div>
             </div>
           )}
@@ -126,26 +87,39 @@ const Blog = ({ data, error }) => {
 };
 
 export async function getStaticPaths() {
+  const { data } = await axios.get(`${process.env.API_URL}/api/blogs`);
+  const blogs = await data.data;
+
+  const paths = blogs.map((blog) => ({
+    params: { slug: blog?.attributes.slug },
+  }));
+
   return {
-    paths: [{ params: { slug: "" } }],
+    paths,
     fallback: "blocking",
   };
 }
 
 export async function getStaticProps(ctx) {
   const { slug } = ctx.params;
-  const response = await blogsApi.getOne(slug);
+  const blogRes = await blogsApi.getOne(slug);
 
-  if (!response.data) {
+  if (blogRes.error) {
     return {
       props: {
-        error: response.error,
+        error: blogRes.error,
       },
     };
   }
 
+  const { data: relatedBlogs } = await blogsApi.getRelated(
+    blogRes.data.attributes.tags,
+    blogRes.data.id
+  );
+
   return {
-    props: { data: response.data, revalidate: 10 },
+    props: { data: blogRes, relatedBlogs },
+    revalidate: 10,
   };
 }
 

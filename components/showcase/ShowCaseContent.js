@@ -10,7 +10,7 @@ const ShowCaseContent = () => {
         <div className="text">
           <h1>
             Senior Full Stack Web <span className="colored">Developer</span>{" "}
-            With Over <span className="colored"> 3+</span> years of experience
+            With Over <span className="colored"> 4+</span> years of experience
           </h1>
           <p>
             Hello 👋️, I am a frontend and backend technology expert as well as

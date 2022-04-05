@@ -1,4 +1,7 @@
 import Lottie from "react-lottie";
+import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckDouble } from "@fortawesome/free-solid-svg-icons";
 
 import * as secureAnimation from "@/data/lottie/secureAnimation";
 import * as fastAnimation from "@/data/lottie/fastAnimation";
@@ -22,7 +25,12 @@ const Work = () => {
           <div className="list flex">
             <div className="abtract2"></div>
 
-            <img src="./assets/circle-bg.svg" alt="service" />
+            <Image
+              src="/assets/circle-bg.svg"
+              alt="service"
+              height={50}
+              width={50}
+            />
             <div className="security flex">
               <div
                 style={{ backgroundColor: "white !important" }}
@@ -36,7 +44,6 @@ const Work = () => {
                   }}
                   width={45}
                   height={60}
-                  // speed={0.3}
                 />
               </div>
               <div className="detail">
@@ -46,7 +53,6 @@ const Work = () => {
             </div>
             <div className="speed flex">
               <div className="speed-icon">
-                {/* <i className="fas fa-magic"></i> */}
                 <Lottie
                   options={{
                     animationData: fastAnimation,
@@ -66,6 +72,7 @@ const Work = () => {
             <div className="online flex">
               <div className="online-icon">
                 <i className="fas fa-database"></i>
+                <FontAwesomeIcon icon={faCheckDouble} />
               </div>
               <div className="detail">
                 <p className="title">24/7 active</p>

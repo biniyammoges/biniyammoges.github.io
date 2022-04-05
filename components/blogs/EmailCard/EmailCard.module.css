@@ -1,0 +1,47 @@
+.subscribe {
+  background-color: #e3f0ff;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.subscribe h3 {
+  margin-bottom: 0.7rem;
+}
+
+.subscribe form {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.subscribe form input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  color: #5d646e;
+}
+
+.subscribe form button {
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: white;
+  background-color: #206585;
+  cursor: pointer;
+}
+
+.subscribe span {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 992px) {
+  .recent .subscribe {
+    max-width: 600px;
+  }
+}

@@ -1,14 +1,34 @@
+import { useRef, useState } from "react";
+
+import classes from "@/styles/Blog.module.css";
+import blogsApi from "@/services/blogs";
+
 import BlogHeader from "@/components/blogs/BlogHeader";
 import BlogCard from "@/components/blogs/BlogCard";
-import classes from "@/styles/Blog.module.css";
 import Footer from "@/components/Footer";
 import Pagination from "@/components/blogs/Pagination";
 import ErrorMessage from "@/components/error";
 
-import blogsApi from "@/services/blogs";
+const Index = ({ data, error }) => {
+  const currentPage = data?.meta?.pagination.page;
+  const count = data?.meta?.pagination?.pageCount;
+  const totalCount = data?.meta?.pagination.total;
 
-const index = ({ data, error }) => {
-  const blogs = data?.data;
+  const [blogs, setBlogs] = useState(data?.data);
+  const [page, setPage] = useState(currentPage);
+  const [pages, setPages] = useState(count);
+  const [total, setTotal] = useState(totalCount);
+  const wrapperRef = useRef(null);
+
+  const onPageChange = async (page) => {
+    setPage(page);
+
+    const { data } = await blogsApi.getAll(page);
+    setBlogs(data.data);
+    wrapperRef.current.scrollIntoView();
+  };
+
+  // if (!data) return <h2>No data to show</h2>;
 
   return (
     <>
@@ -20,35 +40,41 @@ const index = ({ data, error }) => {
           <div className={classes.content}>
             <span>New blog every week</span>
             <h1>
-              <span>Learn</span> Everything I Have Learned Through a
-              <span> Long Time</span>
+              Learn <span>Everything</span> I{"'"}ve Learned Over a Long Period
+              of Time
             </h1>
             <p>
               I write clear, concise, and easy-to-follow tutorials on web
-              development.{" "}
+              development.
             </p>
           </div>
         </div>
       </div>
-      <div className={classes.blogs}>
+      <div className={classes.blogs} ref={wrapperRef}>
         <div className={classes.flex + " container"}>
           {error ? (
             <ErrorMessage error={error} />
-          ) : (
+          ) : data ? (
             blogs.map((blog) => <BlogCard key={blog.id} blog={blog} />)
+          ) : (
+            <div>
+              <h1>Failed to fetch data</h1>
+            </div>
           )}
         </div>
-        {!error && blogs.length > 20 && <Pagination />}
+        {!error && total > 9 && (
+          <Pagination page={page} pages={pages} onPageChange={onPageChange} />
+        )}
       </div>
       <Footer />
     </>
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const response = await blogsApi.getAll();
 
-  if (!response.data)
+  if (response.error)
     return {
       props: {
         error: response.error,
@@ -59,8 +85,7 @@ export async function getStaticProps() {
     props: {
       data: response.data,
     },
-    revalidate: 10,
   };
 }
 
-export default index;
+export default Index;

@@ -6,10 +6,10 @@ const Subscribe = () => {
     <div className="subscribe">
       <div className="container">
         <div className="content">
-          <h1>Subscribe for newsletter</h1>
+          <h1>Subscribe To Our Newsletter</h1>
           <p>
-            Currently i don’t have my own freelancing platform work with my
-            client but I am working on it
+            You will never miss our new opensource project, the most recent
+            blogs, or our newsletter.
           </p>
           <EmailForm />
         </div>
