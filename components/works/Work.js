@@ -48,7 +48,7 @@ const Work = () => {
               </div>
               <div className="detail">
                 <p className="title">Strong Security</p>
-                <p className="desc">Prevent common attacks</p>
+                <p className="desc">Prevent common attacks.</p>
               </div>
             </div>
             <div className="speed flex">
@@ -66,7 +66,7 @@ const Work = () => {
               </div>
               <div className="detail">
                 <p className="title">Fast Delivery</p>
-                <p className="desc">Always deliver sooner</p>
+                <p className="desc">Always deliver on time.</p>
               </div>
             </div>
             <div className="online flex">
@@ -76,7 +76,7 @@ const Work = () => {
               </div>
               <div className="detail">
                 <p className="title">24/7 active</p>
-                <p className="desc">Always active</p>
+                <p className="desc">Always active.</p>
               </div>
             </div>
           </div>

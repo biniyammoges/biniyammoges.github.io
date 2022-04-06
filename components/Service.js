@@ -23,7 +23,7 @@ const Service = () => {
               <div className="detail">
                 <p className="title">Web Development</p>
                 <p className="desc">
-                  <strong>100+</strong> Projects
+                  <strong>20+</strong> Projects
                 </p>
               </div>
             </div>
@@ -35,7 +35,7 @@ const Service = () => {
                 <div className="detail">
                   <p className="title">UI/Ux Design</p>
                   <p className="desc">
-                    <strong>30+</strong> Projects
+                    <strong>10+</strong> Projects
                   </p>
                 </div>
               </div>
@@ -46,7 +46,7 @@ const Service = () => {
                 <div className="detail">
                   <p className="title">Mobile Dev.t</p>
                   <p className="desc">
-                    <strong>20+</strong> Projects
+                    <strong>5</strong> Projects
                   </p>
                 </div>
               </div>
@@ -58,7 +58,7 @@ const Service = () => {
               <div className="detail">
                 <p className="title">Database Design</p>
                 <p className="desc">
-                  <strong>60+</strong> Projects
+                  <strong>3</strong> Projects
                 </p>
               </div>
             </div>

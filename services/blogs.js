@@ -1,20 +1,35 @@
 import axios from "axios";
-const endpoint = `${process.env.NEXT_PUBLIC_API_URL}/api/blogs`;
+
+import { API_URL, NEXT_PUBLIC_API_URL } from "@/config/index";
+const endpoint = `${NEXT_PUBLIC_API_URL}/api/blogs`;
 
 const getAll = async (page = 1) => {
-  return (await axios.get(endpoint + `?page=${page}&sort=desc`)).data;
+  try {
+    return (await axios.get(endpoint + `?page=${page}&sort=desc`)).data;
+  } catch (error) {
+    return { data: null, error: error.message };
+  }
 };
 
 const getOne = async (slug) => {
   try {
-    return (await axios.get(`${process.env.API_URL}/api/blogs/${slug}`)).data;
+    const { data } = await axios.get(`${API_URL}/api/blogs/${slug}`);
+
+    return data;
   } catch (err) {
+    const {
+      error: { status, message },
+    } = err?.response?.data;
+
+    console.log(status, message);
+
     return {
       data: null,
       error:
         err.code === "ECONNREFUSED"
           ? "Connection Failed"
           : "Failed to fetch blogs",
+      status: status ? status : 500,
     };
   }
 };
@@ -26,11 +41,10 @@ const getRelated = async (tags, id) => {
   try {
     // return blogs where id not equal to the given id and have the same tag name
     const { data } = await axios.get(
-      `${process.env.API_URL}/api/blogs?filters[id][$not]=${id}&filters[tags][$eq]=${primaryTag}&pagination[pageSize]=${limit}`
+      `${API_URL}/api/blogs?filters[id][$not]=${id}&filters[tags][$eq]=${primaryTag}&pagination[pageSize]=${limit}`
     );
     return data;
   } catch (err) {
-    console.log(err);
     return { data: null, error: err.message || "Failed to fetch" };
   }
 };

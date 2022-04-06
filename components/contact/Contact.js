@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import Tippy from "@tippyjs/react";
+
+import {
+  faFacebook,
+  faGithub,
+  faLinkedin,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "tippy.js/dist/tippy.css";
 
 import ContactForm from "./ContactForm";
@@ -28,7 +34,9 @@ const Contact = () => {
             contact me
           </h1>
           <div className="divider"></div>
-          <p>Please share your thoughts with us. I will reply shortly</p>
+          <p>
+            Please share your thoughts with us. I will reply as soon as possible
+          </p>
           <ul>
             <Tippy
               content={copied ? "Copied!" : "Copy to clipboard"}
@@ -52,19 +60,19 @@ const Contact = () => {
           </ul>
           <ul>
             <a href="https://github.com/biniyammoges" target="blank">
-              <i className="fab fa-github"></i>
+              <FontAwesomeIcon icon={faGithub} />
             </a>
             <a href="https://www.facebook.com/bini.moges54/" target="blank">
-              <i className="fab fa-facebook"></i>
+              <FontAwesomeIcon icon={faFacebook} />
             </a>
             <a
               href="https://www.linkedin.com/in/biniyam-moges-278241214/"
               target="blank"
             >
-              <i className="fab fa-linkedin"></i>
+              <FontAwesomeIcon icon={faLinkedin} />
             </a>
             <a href="https://www.instagram.com/iambiniy/" target="blank">
-              <i className="fab fa-instagram"></i>
+              <FontAwesomeIcon icon={faInstagram} />
             </a>
           </ul>
         </div>

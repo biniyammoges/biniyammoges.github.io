@@ -19,16 +19,21 @@ const ContactForm = () => {
     if (error) setError(null);
     if (submitted) setSubmitted(false);
 
-    if (!email || !name || !message)
-      return setError("Please fill in all fields");
+    if (!email || !name || !message) {
+      setError("Please fill in all fields");
+      return;
+    }
 
     setLoading(true);
-    const { data } = await axios.post("/api/message", { name, email, message });
+    const { data } = await axios.post("/api/message", {
+      name,
+      email,
+      message,
+    });
 
     if (!data.success) {
       setLoading(false);
       setError(data.error);
-      return;
     }
 
     setLoading(false);
@@ -93,6 +98,7 @@ const ContactForm = () => {
           rows="2"
           placeholder="Write message *"
         ></textarea>
+
         <button
           type="submit"
           style={{ position: "relative", height: loading ? 47 : undefined }}
@@ -114,7 +120,7 @@ const ContactForm = () => {
               }}
             />
           ) : (
-            "Submit"
+            "SEND MESSAGE"
           )}
         </button>
       </form>

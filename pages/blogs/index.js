@@ -38,7 +38,7 @@ const Index = ({ data, error }) => {
       <div className={classes.blogShowcase}>
         <div className="container">
           <div className={classes.content}>
-            <span>New blog every week</span>
+            <span>Easy to follow tutorials</span>
             <h1>
               Learn <span>Everything</span> I{"'"}ve Learned Over a Long Period
               of Time

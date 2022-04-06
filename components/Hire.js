@@ -11,9 +11,8 @@ const Hire = () => {
           </h1>
           <div className="divider"></div>
           <p>
-            Currently I don{"'"}t have my own freelancing platform through which
-            I work with my clients. Please select one of the platforms below to
-            employ me.
+            I{"'"}m looking forward to meeting you. Please choose one of the
+            platforms mentioned to hire me.
           </p>
         </div>
         <div className="content">

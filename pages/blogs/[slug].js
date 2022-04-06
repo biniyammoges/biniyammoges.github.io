@@ -4,6 +4,7 @@ import moment from "moment";
 import ReactMarkdown from "react-markdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import Head from "next/head";
 
 import BlogHeader from "@/components/blogs/BlogHeader";
 import RecentBlog from "@/components/blogs/RecentBlog";
@@ -14,7 +15,7 @@ import EmailCard from "@/components/blogs/EmailCard";
 import classes from "@/styles/BlogPage.module.css";
 import blogsApi from "@/services/blogs";
 import remarkComponent from "@/utils/markdownOptions";
-import Head from "next/head";
+import { API_URL } from "@/config/index";
 
 const Blog = ({ data, error, relatedBlogs }) => {
   const router = useRouter();
@@ -24,7 +25,7 @@ const Blog = ({ data, error, relatedBlogs }) => {
   return (
     <>
       <Head>
-        <title>{blog.attributes.title}</title>
+        <title>{blog?.attributes.title}</title>
       </Head>
       <div className={classes.header + " showcase"}>
         <BlogHeader />
@@ -87,7 +88,7 @@ const Blog = ({ data, error, relatedBlogs }) => {
 };
 
 export async function getStaticPaths() {
-  const { data } = await axios.get(`${process.env.API_URL}/api/blogs`);
+  const { data } = await axios.get(`${API_URL}/api/blogs`);
   const blogs = await data.data;
 
   const paths = blogs.map((blog) => ({
@@ -109,6 +110,7 @@ export async function getStaticProps(ctx) {
       props: {
         error: blogRes.error,
       },
+      notFound: blogRes.status === 404,
     };
   }
 

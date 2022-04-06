@@ -23,7 +23,7 @@ const remarkComponent = {
       </SyntaxHighlighter>
     );
   },
-  image({ image }) {
+  img(image) {
     return (
       <Image
         src={image.src}

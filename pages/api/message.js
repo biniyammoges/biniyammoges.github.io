@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_URL } from "@/config/index";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.send("Not allowed");
@@ -8,7 +9,7 @@ export default async function handler(req, res) {
     return res.json({ success: false, error: "Please provide in all fields" });
 
   try {
-    const { data } = await axios.post(`${process.env.API_URL}/api/messages`, {
+    const { data } = await axios.post(`${API_URL}/api/messages`, {
       data: { name, email, message },
     });
 

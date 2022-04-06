@@ -12,7 +12,7 @@ const Experiance = () => {
         </div>
         <div className="project">
           <div className="dot"></div>
-          <h2>70+</h2>
+          <h2>20+</h2>
           <p>Completed project</p>
         </div>
         <div className="year">
@@ -22,8 +22,8 @@ const Experiance = () => {
         </div>
         <div className="award">
           <div className="dot"></div>
-          <h2>0</h2>
-          <p>National award</p>
+          <h2>1</h2>
+          <p>Coding awards</p>
         </div>
       </div>
     </div>

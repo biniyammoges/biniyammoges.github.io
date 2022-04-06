@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Lottie from "react-lottie";
 import axios from "axios";
 
@@ -12,20 +12,17 @@ const EmailForm = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    setError(false);
-    setSubmitted(false);
-
+    if (error) setError(false);
+    if (submitted) setSubmitted(false);
     if (!email) return setError("* Please add your email to subscribe");
 
     setLoading(true);
     const { data } = await axios.post("/api/subscribe", { email });
-
     if (!data.success) {
       setError(data.error);
       setLoading(false);
       return;
     }
-
     setLoading(false);
     setSubmitted(true);
     setEmail("");

@@ -5,11 +5,11 @@
 
 .wrapper {
     background-color: #f8f9fa;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .content {
-    min-height: 400px;
+    min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
