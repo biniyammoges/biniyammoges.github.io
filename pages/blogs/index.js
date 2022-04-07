@@ -71,7 +71,7 @@ const Index = ({ data, error }) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const response = await blogsApi.getAllFromServer();
 
   if (response.error)
@@ -85,6 +85,7 @@ export async function getServerSideProps() {
     props: {
       data: response,
     },
+    revalidate: 100,
   };
 }
 
