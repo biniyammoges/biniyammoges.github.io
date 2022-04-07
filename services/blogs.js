@@ -11,6 +11,27 @@ const getAll = async (page = 1) => {
   }
 };
 
+const getAllFromServer = async () => {
+  const page = 1;
+  const pageSize = 15;
+
+  try {
+    const { data } = await axios.get(
+      `${API_URL}/api/blogs?pagination[page]=${page}&pagination[pageSize]=${pageSize}&sort[createdAt]=desc`
+    );
+
+    return data;
+  } catch (err) {
+    return {
+      data: null,
+      error:
+        err.code === "ECONNREFUSED"
+          ? "Connection Failed"
+          : "Failed to fetch blogs",
+    };
+  }
+};
+
 const getOne = async (slug) => {
   try {
     const { data } = await axios.get(`${API_URL}/api/blogs/${slug}`);
@@ -20,8 +41,6 @@ const getOne = async (slug) => {
     const {
       error: { status, message },
     } = err?.response?.data;
-
-    console.log(status, message);
 
     return {
       data: null,
@@ -51,6 +70,7 @@ const getRelated = async (tags, id) => {
 
 const exp = {
   getAll,
+  getAllFromServer,
   getOne,
   getRelated,
 };

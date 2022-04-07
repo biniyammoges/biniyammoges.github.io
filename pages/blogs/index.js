@@ -28,7 +28,7 @@ const Index = ({ data, error }) => {
     wrapperRef.current.scrollIntoView();
   };
 
-  // if (!data) return <h2>No data to show</h2>;
+  if (!data) return <h2>No data to show</h2>;
 
   return (
     <>
@@ -72,7 +72,7 @@ const Index = ({ data, error }) => {
 };
 
 export async function getServerSideProps() {
-  const response = await blogsApi.getAll();
+  const response = await blogsApi.getAllFromServer();
 
   if (response.error)
     return {
@@ -83,7 +83,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      data: response.data,
+      data: response,
     },
   };
 }
